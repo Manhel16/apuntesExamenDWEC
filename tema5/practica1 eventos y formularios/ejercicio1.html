@@ -1,0 +1,39 @@
+<!-- 1.- Realiza una página web que muestre un número dentro de un div y responda a los siguientes
+eventos de la siguiente manera:
+● Cuando haga doble click, calculará el triple del número
+● Cuando pase el ratón por encima cambiará de color (fondo y fuente) y cuando salga volverá a su
+color original. -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Modificar informacion de numero. ut5pr1-ej3ModifNumero.html...</title>
+
+</head>
+<body>
+<div id="numero">
+    4
+</div>
+<script>
+window.onload = function(){
+    document.getElementById('numero').ondblclick = producto3;
+    document.getElementById('numero').onmouseover = cambiarcolor;
+    document.getElementById('numero').onmouseout = limpiarcolor;
+
+}
+function producto3 (){
+    this.innerHTML *= 3;
+}
+
+function limpiarcolor() {
+    this.style.backgroundColor = "white";
+    this.style.color = "black";
+}
+
+function cambiarcolor() {
+    this.style.backgroundColor = "green";
+    this.style.color = "magenta";
+}   			 
+</script>
+</body>
+</html>

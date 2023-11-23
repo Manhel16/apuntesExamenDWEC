@@ -1,0 +1,28 @@
+<!-- 3.- Muestra en un alert el área de un círculo y la longitud de una circunferencia a partir del 
+	radio que introduzca el usuario en un prompt. Debes mostrarlo con 2 decimales. Comprobar que introduce un número como radio. 
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type"
+   	  content="text/html;charset=utf-8">
+    <title>ut3-04-circulo</title>
+</head>
+<body>
+    Calcular el área de un círculo y la longitud de una circunferencia dado el radio
+
+    <script type="text/javascript">
+   	 var radio = Number (prompt("Ingresa el radio del círculo en centímetros: "));
+   	 var area = 0;
+     var circunferencia = 0;
+   	 if ( isNaN(radio)) {
+        	alert("valor del radio incorrecto");
+   	 }
+   	 else {
+   	 	circunferencia = 2*Math.PI * radio;
+      area = Math.PI * Math.pow(radio,2)
+   	 	alert("El \xe1rea del c\circulo es de: " + area + " cms cuadrados \n la longitud de la circunferencia es: " + circunferencia + "cms.");
+    	}   	 
+      </script>
+</body>
+</html>

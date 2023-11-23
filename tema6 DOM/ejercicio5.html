@@ -1,0 +1,67 @@
+<!-- 5.- A partir del fichero ut06ej5RecorrerDOM.html se quiere  que, cuando se haga click en cualquiera de los h2, 
+recorra su árbol DOM y muestre la información correspondiente, Ejemplo: -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Recorrer árbol DOM</title>
+    <script type="text/javascript">
+        window.addEventListener("load", iniciar);
+        function iniciar() {
+            for (var i = 0; i < document.getElementsByTagName("h2").length; i++) {
+                document.getElementsByTagName("h2")[i].addEventListener("click", recorreAdelante);
+            }
+        }
+
+        function recorreAdelante(e) {
+            // con e capturamos el elemento que ha llamado al evento para saber en qué H2 nos encontramos
+            texto = "";
+            var h2 = e.target;
+            // con e.target extraemos el elemento al que se ha hecho click
+            texto += "Has elegido " + h2.textContent;
+            //Seleccionamos al padre
+            var padre = h2.parentElement;
+            texto += " que se imparte en turno de " + padre.id + "<br/>";
+            //Seleccionamos el hermano --ul
+            var ul = h2.nextElementSibling;
+            texto += "Los nº de grupos que se imparten son: " + ul.children.length + ": ";
+            var hijo = ul.firstChild;
+            while (hijo != null) {
+                texto += " " + hijo.textContent;
+                hijo = hijo.nextElementSibling;
+            }
+            document.getElementById("texto").innerHTML = texto;
+        }
+    </script>
+</head>
+
+<body>
+    <H1> CICLOS DE INFORMÁTICA EN IES PALOMERAS VALLECAS </H1>
+    <div id="mañana">
+        <h2> Grado Superior </h2>
+        <ul id="lista">
+            <li>ASIR1</li>
+            <li>ASIR2</li>
+            <li>DAW1</li>
+            <li>DAW2</li>
+        </ul>
+
+        <div id="tarde">
+            <h2> Grado Medio </h2>
+            <ul id="lista">
+                <li>SMR1A</li>
+                <li>SMR1B</li>
+                <li>SMR2A</li>
+                <li>SMR2B</li>
+            </ul>
+            <h2> Grado Superior </h2>
+            <ul id="lista">
+                <li>DAM1</li>
+                <li>DAM2</li>
+            </ul>
+        </div>
+        <div id="texto"> </div>
+</body>
+
+</html>

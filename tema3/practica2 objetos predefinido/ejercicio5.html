@@ -1,0 +1,81 @@
+<!-- 
+	5.- Cargar un String por teclado e implementar las siguientes funcionalidades:
+- Imprimir la primera mitad de los caracteres de la cadena
+- Imprimir el último carácter
+- Imprimir la cadena en forma inversa
+- Imprimir cada carácter del String separado con un guión
+- Imprimir la cantidad de vocales almacenadas
+
+ -->
+<html>
+    <head>
+   	 <meta http-equiv="content-type"
+   	  content="text/html;charset=utf-8">
+    <title>ut3-04-MasString</title>
+    </head>
+    <body>
+   	 
+   	 <script type="text/javascript">
+   		 var cadena;
+   		 var mitad;
+   		 var ultima;   							 
+   		 cadena = prompt('Introduce una frase');   		 
+   		 document.write('Tu cadena es :' + cadena + '</br>' );
+   		 
+   		 mitad = cadena.substring(0,(cadena.length/2));//Imprime la primera mitad de la cadena
+/* más opciones: 
+     cadena.slice(0,(cadena.length/2))
+     cadena.substr(0,(cadena.length/2))
+*/
+   		 document.write('La primera mitad de la cadena es: ' + mitad + '</br>' );
+   		 
+   		 ultima = cadena.charAt(cadena.length - 1);//Imprime el último carácter de la cadena
+   		 // ultima = cadena.substring((cadena-length-1), cadena.length)
+   		 document.write('El ultimo caracter es: ' + ultima + '</br>');
+   		 
+   			 var cadenaReverso="";
+   			 
+   			 for( var i = 0; i<=cadena.length; i++){
+   				 cadenaReverso += cadena.charAt(cadena.length-i);   				 
+   			 }						 
+   		 
+   		 document.write('La cadena inversa es: ' + cadenaReverso + '</br>');
+   		 
+   		 var cadenaGuiones="";
+   			 
+   			 for(var i = 0 ; i < cadena.length ; i++) {
+   				 var cadenaAux="";
+   				 var guion = "-";
+   				 cadenaAux = cadena.charAt(i);
+   				 cadenaGuiones += cadenaAux.concat(guion);   				 
+   			 }
+   		 
+   		 document.write('La cadena separada con guiones es: ' + cadenaGuiones);
+   		
+// /*cuando trabajemos con arrays otra solución será:
+// miarray = cadena.split(“”); --- crea un array donde cada letra es un elemento
+// mifrase.forEach(mostrar);
+// function mostrar(e,indice,array){
+//   if (indice === (array.length -1)){
+//       document.write (e)} 
+//   else {
+//    document.write(e+"-")}
+// }
+
+//    			 var contador = 0;
+//    			 var cadenaAux = cadena.toUpperCase();   			 
+//    			 for(var i=0 ; i < cadena.length ; i++){
+//    				 if( cadenaAux.charAt(i)=="A" ||
+//    					 cadenaAux.charAt(i)=="E" ||
+//    					 cadenaAux.charAt(i)=="I" ||
+//    					 cadenaAux.charAt(i)=="O" ||
+//    					 cadenaAux.charAt(i)=="U" ) {
+//    						 contador++;   						 
+//    				 } else {}
+//    			 }
+   		 
+//    		 document.write( '</br>El número de vocales es: ' + contador);
+   	 </script>
+   	 
+    </body>
+</html>

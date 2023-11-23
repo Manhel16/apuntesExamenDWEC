@@ -1,0 +1,36 @@
+<!-- 1.- Simular un pequeño formulario que contenga las siguientes partes: 
+- Una pregunta de si el usuario es mayor de edad con las posibles respuestas en forma de radio button - Dos campos: uno para introducir la contraseña y otro para verificar si la contraseña es la misma 
+- Un botón que verifique la solución al formulario: nos dirá si es mayor de edad o no y si las contraseñas introducidas son las mismas o no -->
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+   	 function validar() {
+   		 if(document.getElementById("mayor").checked&&
+   		   (document.getElementById('pass1').value==document.getElementById('pass2').value)){
+   			 alert('Eres mayor de edad y las contraseñas coinciden');
+   		 }else if(document.getElementById("mayor").checked&&
+   		     	(document.getElementById('pass1').value!=document.getElementById('pass2').value)){
+   			 alert('Eres mayor de edad pero las contraseñas no coinciden');
+   		 }else if(document.getElementById("menor").checked&&
+   		     	(document.getElementById('pass1').value==document.getElementById('pass2').value)){
+   			 alert('Las contraseñas coinciden pero no eres mayor de edad');
+   		 }else{
+   			 alert('No eres mayor de edad y las contraseñas no coinciden');
+   		 }
+   	 }
+    </script>
+</head>
+<body>
+    <form>
+   	 <label>¿Eres mayor de edad?</label><br/><br/>
+   	 <input name="edad" id="mayor" type="radio"/>Sí<br/>
+   	 <input name="edad" id="menor" type="radio"/>No<br/><br/>
+   	 <label>Introduce la contraseña</label><br/><br/>
+   	 <input id="pass1" type="password"/><br/><br/>
+   	 <label>Verifica la contraseña</label><br/><br/>
+   	 <input id="pass2" type="password"/><br/><br/>
+   	 <input type="submit" value="Validar" onclick="validar()"/>
+    </form>
+</body>
+</html>

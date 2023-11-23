@@ -1,0 +1,33 @@
+<!-- 3.-Realiza una aplicación en JavaScript que solicite por pantalla Nombre y apellidos del asistente al curso de JavaScript. 
+    Abrirá una ventana con el diploma de partición del asistente. Deberán también aparecer 2 botones: Imprimir y Cerrar  
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type"
+   	  content="text/html;charset=utf-8">
+</head>
+<body>
+    <h1> Ejemplo de Apariencia de una Ventana</h1>
+    <br>
+    <script type="text/javascript">
+    var datos = prompt('Nombre y apellidos del asistente: ') ;
+    myWindow1=window.open('','Ventana','width=600,height=400');
+    myWindow1.document.write('<html>');
+    myWindow1.document.write('<head>');
+    myWindow1.document.write('<title>Ventana de Prueba</title>');
+    myWindow1.document.write('</head>');
+    myWindow1.document.write('<body>');
+    myWindow1.document.write('<center>');
+    myWindow1.document.writeln('<h1> DIPLOMA DE ASISTENCIA </H1> ');
+    myWindow1.document.writeln('<h2> CURSO DE JAVASCRIPT </H2> ');
+    myWindow1.document.writeln('<hR> ');
+    myWindow1.document.writeln('<h3> ' + datos +' </H3> ');
+    myWindow1.document.write('<input type=button value=Imprimir onClick=window.print() > 	');
+    myWindow1.document.write('<input type=button value=Cerrar onClick=window.close() >');
+    myWindow1.document.write('</center>');
+    myWindow1.document.write('</body>');
+    myWindow1.document.write('</html>');
+    </script>
+</body>
+</html>

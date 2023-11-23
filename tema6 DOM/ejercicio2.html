@@ -1,0 +1,36 @@
+<!-- 2.-Realiza un script que tenga una clase llamada  inverso,  en la que asigne el color de fondo a negro y el color del texto a blanco.
+Inicialmente la página tendrá un texto libre con el fondo blanco y el color del texto negro (colores por defecto), además deberá tener un botón, cuyo texto será Fondo Oscuro. 
+Al pulsar sobre el botón deberá asignar al body de la página los valores de la clase inverso y el texto del botón será Fondo Claro.
+Cuando pulse sobre el botón con el texto Fondo Claro, revertirá los cambios. -->
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DOM</title>
+</head>
+<body>
+    <style>
+        .inverso {
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <p>parrafo 1 </p>
+    <p>parrafo 2 </p>
+    <p>parrafo 3 </p>
+    <p>parrafo 4 </p>
+    
+    <form id='miFormulario'>
+        <button type="button" onclick='invierte()' id="toggle">fondo oscuro</button>
+    </form>
+    <script type="text/Javascript">
+        let fondoOscuro = false;
+        function invierte() {
+            let textoBotón = fondoOscuro ? 'fondo oscuro' : 'fondo claro';    
+            document.getElementById('toggle').innerHTML = textoBotón;    
+            document.body.classList.toggle('inverso');
+            fondoOscuro = !fondoOscuro;
+        }
+    </script>
+</body>
+</html>

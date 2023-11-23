@@ -1,0 +1,41 @@
+<!-- 3.- A partir de los ficheros obtenidos en este ZIP, realiza las modificaciones necesarias para que añada el elemento 
+que se introduzca en el input cuando se haga click en el botón Añadir. 
+Respeta las clases creadas para acceder a los objetos. -->
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>JavaScript and the DOM</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript">
+  	  window.addEventListener("load",iniciar);
+       function iniciar(){
+    	    const caja = document.querySelector('.lista');
+    	    const descriptionP = document.querySelector('p.description');
+    	    const BotonAñadir = document.querySelector('button.BotonAñadir');
+    	    BotonAñadir.addEventListener('click',añadir);
+  	  }
+  	  function añadir() {
+    	    let AñadirElemento =document.querySelector('input.AñadirElemento');
+         let ul = document.getElementsByTagName('ul')[0];
+    	    let li = document.createElement('li');
+    	    li.textContent = AñadirElemento.value;
+    	    ul.appendChild(li);
+    	    AñadirElemento.value = '';
+ 	  }
+	</script>
+  </head>
+  <body>
+	<h1 id="encabezado">DOM en JavaScript. Añadir elemento </h1>
+	<div class="lista">
+  	  <p class="description">Cosas que son violeta:</p>
+  	  <ul>
+    	    <li>ciruelas</li>
+    	    <li>amatista</li>
+    	    <li>lavanda</li>
+    	    <li>berenjena</li>
+  	  </ul>
+  	  <input type="text" class="AñadirElemento">
+  	  <button class="BotonAñadir">Añadir</button>   
+	  </div>
+  </body>
+</html>

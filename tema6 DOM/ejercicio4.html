@@ -1,0 +1,57 @@
+<!-- 4.- Realiza las modificaciones necesarias sobre el ejercicio anterior para añadir dos botones más para borrar primer y último elemento de la lista. 
+Puedes utilizar los ficheros que están dentro de este ZIP -->
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>DOM en JavaScript.Borrar elemento</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript">
+    	window.addEventListener("load",iniciar);
+    	function iniciar(){
+   		  const listDiv = document.querySelector('.lista');
+   		  const BotonAñadir = document.querySelector('button.BotonAñadir');
+   		  const BotonBorrar = document.querySelector('button.BotonBorrar');
+   		  const BotonBorrarPrimero = document.querySelector('button.BotonBorrarPrimero');
+   		  BotonAñadir.addEventListener('click',añadir);
+   		  BotonBorrar.addEventListener('click',borrar);
+   		  BotonBorrarPrimero.addEventListener('click',borrarprimero);
+    	}
+
+   	 function añadir() {
+   		  const AñadirElemento = document.querySelector('input.AñadirElemento');
+     		 let ul = document.getElementsByTagName('ul')[0];
+     		 let li = document.createElement('li');
+     		 li.textContent = AñadirElemento.value;
+     		 ul.appendChild(li);
+     		 AñadirElemento.value = '';
+   	 }    
+ 
+   	 function borrar()  {
+     		 let ul = document.getElementsByTagName('ul')[0];
+     		 let li = document.querySelector('li:last-child');
+     		 ul.removeChild(li);
+     	 }  
+     	 function borrarprimero() {
+     		 let ul = document.getElementsByTagName('ul')[0];
+     		 ul.removeChild(ul.firstElementChild);
+     	 }
+	</script>    
+  </head>
+ <body>
+	<h1 id="encabezado">DOM en JavaScript. Añadir y borrar elemento </h1>
+	<div class="lista">
+  	<p class="description">Cosas que son violeta:</p>
+  	<ul>
+    	<li>ciruelas</li>
+    	<li>amatista</li>
+    	<li>lavanda</li>
+    	<li>berenjena</li>
+  	</ul>
+  	<input type="text" class="AñadirElemento">
+  	<button class="BotonAñadir">Añadir</button>   
+  	<button class="BotonBorrar">BorrarUltimo</button>
+  	<button class="BotonBorrarPrimero">BorrarPrimero</button>
+ 
+	</div>
+  </body>
+</html>

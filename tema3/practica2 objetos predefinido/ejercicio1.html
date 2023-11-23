@@ -1,0 +1,24 @@
+<!--
+	1.- Hacer un programa que nos indique cuantos días quedan para que vengan los Reyes Magos.
+ut3-01-ReyesMagos.html
+  -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type"
+   	  content="text/html;charset=utf-8">
+	<title>UT03-PR1-REYESMAGOS</title>
+</head>
+<body>
+Trabajo con Objetos Date y Math
+Calcular el número de días que quedan para que vengan los Reyes Magos
+    <script type="text/javascript">
+   	 var fecha_actual = new Date();
+   	 var reyes = new Date(2021, 0,6);
+   	 alert("La fecha actual es: " + fecha_actual.toDateString());
+   	 alert("Los Reyes Magos vienen: " + reyes.toDateString());
+   	 var tiempo_restante = Math.round((reyes-fecha_actual)/(1000*60*60*24));
+   	 alert("Quedan " + tiempo_restante + " dias para que vengan los Reyes Magos");
+    </script>
+</body>
+</html>

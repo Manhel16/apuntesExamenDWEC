@@ -1,0 +1,101 @@
+<!-- 
+	2.- Hacer un programa que en un alert muestre la fecha y hora actuales de la siguiente forma:
+Hoy es martes, 22 de septiembre de 2020 y son las 12:34 horas
+
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type"
+     	content="text/html;charset=utf-8">
+	<title>UT03-MOSTRAR En texto una fecha</title>
+</head>
+<body>
+Trabajo con Objetos Date
+Mostrar la fecha y hora actuales de la siguiente forma:
+Hoy es martes, 22 de septiembre de 2020 y son las 12:34 horas
+<script type="text/javascript">
+    	var fecha_actual = new Date();
+    	var dia_semana = fecha_actual.getDay();
+    	var dia = fecha_actual.getDate();
+    	var mes = fecha_actual.getMonth();
+    	var anio = fecha_actual.getFullYear();
+    	var horas = fecha_actual.getHours();
+    	var minutos = fecha_actual.getMinutes();
+    	alert ('Hoy es ' + mostrar_diasemana(dia_semana) + '. ' + dia + ' de ' + mostrar_mes(mes) + ' de ' + anio + ' y son las ' + horas +':'+minutos );
+        function mostrar_diasemana(dia_semana){
+	switch (dia_semana){
+    	case 0:
+      	return 'domingo';
+      	break;
+    	case 1:
+      	return 'lunes';
+      	break;
+    	case 2:
+      	return 'martes';
+      	break;
+    	case 3:
+      	return 'miercoles';
+      	break;
+    	case 4:
+      	return 'jueves';
+      	break;
+    	case 5:
+      	return 'viernes';
+      	break;
+    	case 6:
+      	return 'sabado';
+      	break;
+    	case 7:
+      	return 'domingo';
+      	break; 	 
+    	default:
+      	return 'error';
+  	}
+  }    
+  function mostrar_mes(mes){
+	switch (mes){
+    	case 0:
+      	return 'enero';
+      	break;
+    	case 1:
+      	return 'febrero';
+      	break;
+    	case 2:
+      	return 'marzo';
+      	break;
+    	case 3:
+      	return 'abril';
+      	break;
+    	case 4:
+      	return 'mayo';
+      	break;
+    	case 5:
+      	return 'junio';
+      	break;
+    	case 6:
+      	return 'julio';
+      	break;
+    	case 7:
+      	return 'agosto';
+      	break;
+    	case 8:
+      	return 'septiembre';
+      	break;
+    	case 9:
+      	return 'octubre';
+      	break;
+    	case 10:
+      	return 'noviembre';
+      	break;
+    	case 11:
+      	return 'diciembre';
+      	break;
+    	default:
+      	return 'error';
+	}
+  } 	 
+   	 
+	</script>
+</body>
+</html>

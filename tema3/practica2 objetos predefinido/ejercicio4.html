@@ -1,0 +1,31 @@
+<!-- 
+4.- Crea un programa que Solicite dos números al usuario y muestre por pantalla un número aleatorio generado entre los dos números introducidos.	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type"
+   	  content="text/html;charset=utf-8">
+    <title>ut3-05-aleatorio</title>
+</head>
+<body>
+
+Solicitar dos números al usuario y generar un número aleatorio entre los dos números introducidos
+    <script type="text/javascript">
+   	 var inicio = Number (prompt("Introduce primer valor: "));
+     var fin = Number (prompt("Introduce último valor: "));
+     var x = 0;
+   	
+   	 if ( isNaN(inicio) || isNaN(fin)) {
+        	alert("valor del intervalo incorrecto");
+   	 }
+   	 else {
+   	 	x = Math.floor(Math.random() * (fin - inicio) + inicio);
+      document.write("</br> Numero aleatorio entre: " + inicio + " y " + fin + ": " + x);
+
+    	}
+   	 
+      </script>
+</body>
+</html>
+ 
