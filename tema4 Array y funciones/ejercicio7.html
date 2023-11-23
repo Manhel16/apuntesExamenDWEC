@@ -1,0 +1,52 @@
+<!-- 
+    7.- Programa que genera los números correspondientes a la bonoloto. Muestra 
+6 valores enteros del 0 al 49, los cuales no pueden ser repetidos, y un valor del 0 al 9 que corresponde al reintegro.
+
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ut4-ej8-bonoloto</title>
+    <script type="text/javascript">
+        //metodo que comprueba si el número está repetido
+
+        function buscar(lista, numero) {
+            for (var i = 0; i < lista.length; i++) {
+                //comprobamos si el numero generado se encuentra ya en el array
+                if (lista[i] === numero) {
+                    return i; //devuelve la posicion en caso de encontrarse en el array lista
+                }
+            }
+            return -1; //devuelve -1 en caso de no encontrarse en el array
+        }
+    </script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //calculamos un número al azar del 0 al 9 para el reintegro.
+        var reintegro = Math.floor(Math.random() * 10);
+        //creamos un array donde almacenar los 6 números de la bonoloto
+        var lista = [];
+        document.write("Los números de la bonoloto son: ");
+        do { //bucle que nos generará cada número al azar
+            //generamos un número al azar entre 0 y 49
+            var numero = Math.floor(Math.random() * 50);
+            //condicional que comprobará si el número generado al azar está o no repetido
+            if (buscar(lista, numero) == -1) {
+                var posicion = lista.push(numero);
+                //introduce el numero generado al azar y devuelve la cantidad 
+                //de huecos existentes en el array lista
+                //muestra un número de la bonoloto en cada vuelta
+                document.write(" [" + numero + "] ");
+            }
+        } while (posicion < 6); //el bucle continuará hasta que el array tenga 6 posiciones
+
+        document.write("<br /> El reintegro es: [" + reintegro + "]");
+
+    </script>
+</body>
+
+</html>

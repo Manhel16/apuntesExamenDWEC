@@ -1,0 +1,33 @@
+<!-- 
+  6.- Realiza un programa en javascript que tenga la función palabra_mas_grande, 
+  en la que el usuario introduzca una frase y muestre con alert cual es la palabra más grande
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type"
+   	  content="text/html;charset=utf-8">
+    <title>Ut4-ej7-LaPalabraMasGrande.html</title>
+</head>
+<body>
+<script>
+texto= prompt ("Introduce un texto: ");
+alert (encontrar_palabra_mas_grande(texto));
+
+function encontrar_palabra_mas_grande(str)
+{
+  var array1 = str.split(' ');
+  var result = array1[0];
+
+  for(var x = 1 ; x < array1.length ; x++)
+  {
+	if(result.length < array1[x].length)
+	{
+	result = array1[x];
+	}
+  }
+  return result;
+}
+</script>
+</body>
+</html>

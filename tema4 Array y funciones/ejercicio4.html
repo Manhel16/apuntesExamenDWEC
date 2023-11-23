@@ -1,0 +1,49 @@
+<!-- 
+    4.-Crea un script que tome una serie de palabras introducidas por el usuario y almacene esas palabras en un array. 
+    Posteriormente, manipule ese array para mostrar en una nueva ventana los siguientes datos. : 
+a. La primera palabra introducida por el usuario. 
+b. La última palabra introducida por el usuario. 
+c. El número de palabras presentes en el array. 
+d. Todas las palabras ordenadas alfabéticamente. 
+e.- Visualizarlas todas separadas por un – 
+f.- Extraer el segundo y tercer elemento en otro array y visualizarlo. 
+g.- Insertar 2 nuevos elementos en la tercera posición. 
+
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ut4-ej5-ManipulacionArrays </title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var tabla_nombres = new Array();
+        do {
+            var palabra = prompt("Escribe una palabra o pulsa CANCELAR para terminar: ");
+            if (palabra != null) { var tamaño = tabla_nombres.push(palabra); }
+        } while (palabra != undefined);
+        //4.a) Mostrar la primera palabra introducida por el usuario
+        document.write("<br />a) La primera palabra introducida es: " + tabla_nombres[0]);
+        //4.b) Mostrar la última palabra introducida por el usuario
+        document.write("<br />b) La última palabra introducida es: " + tabla_nombres[tamaño - 1]);
+        //4.c) Mostrar el número de palabras presentes en el array.
+        document.write("<br />c) La cantidad de palabras total es: " + tamaño);
+        // 4.d) Ordenamos el array
+        tabla_nombres.sort();
+        // 4.e) Visualizamos el contenido separado por un -
+        document.write("<br />d),e) El contenido del array ordenado alfabéticamente es: " + tabla_nombres.join(" - "));
+        // 4.f) Extraemos el segundo y tercer elemento en otro array y lo visualizamos
+        var tabla_nombres2 = tabla_nombres.slice(1, 3);
+        document.write("<br />f) El contenido del nuevo array es: " + tabla_nombres2.join(" "));
+        // 4.g) Insertamos dos nuevos elementos en la nueva posición y visualizamos
+        tabla_nombres.splice(1, 0, "Ana", "Gomez");
+        //Si quisiéramos sustituir dos elementos por otros nuevos en la nueva posición sería: tabla_nombres.splice(1,2,"Ana", "Gomez");
+
+        document.write("<br />g) El nuevo contenido del primer array es: " + tabla_nombres.join(" - "));
+    </script>
+</body>
+
+</html>

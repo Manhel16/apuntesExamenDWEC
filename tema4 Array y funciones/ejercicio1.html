@@ -1,0 +1,37 @@
+<!-- 
+    1.- Modifica el ejercicio 2 de la práctica 2 de la UT3, utilizando arrays para obtener la descripción del día de la semana y el mes. Recuerdo el enunciado:
+“Hacer un programa que en un alert muestre la fecha y hora actuales de la siguiente forma:
+Hoy es martes, 22 de septiembre de 2020 y son las 12:34 horas”
+
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type"
+     	content="text/html;charset=utf-8">
+	<title>UT03-MOSTRAR En texto una fecha</title>
+</head>
+<body>
+Trabajo con Objetos Date. Propuesta de ejercicio utilizando arrays
+Mostrar la fecha y hora actuales de la siguiente forma:
+Hoy es martes, 22 de septiembre de 2020 y son las 12:34 horas
+<script type="text/javascript">
+/*
+Mostrar la fecha y hora actuales de la siguiente forma:
+Hoy es martes, 22 de septiembre de 2020 y son las 12:34 horas
+
+ */
+    	var semana = ['domingo', 'lunes','martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo', 'lunes'];
+    	var nombre_mes = ['enero','febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+    	var fecha_actual = new Date();
+    	var dia_semana = fecha_actual.getDay();
+    	var dia = fecha_actual.getDate();
+    	var mes = fecha_actual.getMonth();
+    	var anio = fecha_actual.getFullYear();
+    	var horas = fecha_actual.getHours();
+    	var minutos = fecha_actual.getMinutes();
+   // Solucion con arrays:
+    	alert ('Hoy es ' + semana[dia_semana] + '. ' + dia + ' de ' + nombre_mes[mes] + ' de ' + anio + ' y son las ' + horas +':'+minutos );
+</script>
+</body>
+</html>
